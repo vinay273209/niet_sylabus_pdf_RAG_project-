@@ -1,0 +1,108 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Inspect syllabus archive",
+			"type": "shell",
+			"command": "d:/niet-sylabus RAG/.venv/Scripts/python.exe",
+			"args": [
+				"scripts/preprocess_syllabus.py",
+				"Syllabus_Repository.zip",
+				"--output",
+				"reports/syllabus_preprocessing_report.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Gemini and Qdrant connections",
+			"type": "shell",
+			"command": "d:/niet-sylabus RAG/.venv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"scripts.check_connections"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Qdrant connection",
+			"type": "shell",
+			"command": "d:/niet-sylabus RAG/.venv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"scripts.check_connections",
+				"--qdrant-only"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Gemini connection",
+			"type": "shell",
+			"command": "d:/niet-sylabus RAG/.venv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"scripts.check_connections",
+				"--gemini-only"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Qdrant collection",
+			"type": "shell",
+			"command": "d:/niet-sylabus RAG/.venv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"scripts.inspect_collection"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Create empty Qdrant collection",
+			"type": "shell",
+			"command": "d:/niet-sylabus RAG/.venv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"scripts.create_collection"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Dry-run syllabus preprocessing",
+			"type": "shell",
+			"command": "d:/niet-sylabus RAG/.venv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"scripts.ingest_pdfs",
+				"--dry-run"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Ingest syllabi to Qdrant",
+			"type": "shell",
+			"command": "d:/niet-sylabus RAG/.venv/Scripts/python.exe",
+			"args": [
+				"-m",
+				"scripts.ingest_pdfs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Launch syllabus chatbot",
+			"type": "shell",
+			"command": "d:/niet-sylabus RAG/.venv/Scripts/python.exe",
+			"args": [
+				"app.py"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

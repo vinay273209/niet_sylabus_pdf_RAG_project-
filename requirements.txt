@@ -1,0 +1,6 @@
+google-genai>=1.0
+qdrant-client>=1.12
+sentence-transformers>=3.0
+PyMuPDF>=1.24
+gradio>=5.0
+python-dotenv>=1.0
